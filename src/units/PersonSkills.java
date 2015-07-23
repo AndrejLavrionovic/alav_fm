@@ -14,16 +14,16 @@ import java.util.List;
  * @author Andrei
  * Made by NetBeands v8.0.2
  * Java v1.8_0_20
- * Date: 
- * Time: 
- * Last changed: 
+ * Date: 20/07/2015
+ * Time: 16:45
+ * Last changed: 23/07/2015
  */
 public class PersonSkills {
     // VARIBLES
     //**************************************************************************
     private int[] playerBunch = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,
                                  16, 17, 18, 19, 20, 22, 23};
-    private int[] goalkeeperBunch = {0, 10, 15, 21, 23, 24, 25, 26};
+    private int[] goalkeeperBunch = {0, 10, 15, 18, 21, 24, 25, 26};
     
     // COLLECTIONS
     //**************************************************************************
@@ -48,8 +48,8 @@ public class PersonSkills {
         skills.add("Pace");skills.add("Agility");skills.add("Decision-making");
         skills.add("Power");skills.add("Endurance");skills.add("Distribution");
         skills.add("Balance");skills.add("Strenght");skills.add("Inteligence");
-        skills.add("Vision");skills.add("Composure");skills.add("Leadership");
-        skills.add("Communication");skills.add("Stamina");skills.add("Jumping");
+        skills.add("Jumping");skills.add("Composure");skills.add("Leadership");
+        skills.add("Communication");skills.add("Stamina");skills.add("Vision");
         skills.add("Goal-kicking");skills.add("Positioning");skills.add("Reflexes");
     }
     
