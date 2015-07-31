@@ -10,13 +10,14 @@ import java.util.List;
  * Java v1.8_0_20
  * Date: 23/07/2015
  * Time: 17:38
- * Last changed: 28/07/2015
+ * Last changed: 30/07/2015
  */
 public class Skill {
     // CONSTANTS
     //**************************************************************************
     private final float MAX_MOD_VOL = 1.0f; // Maximal skill value that can be reduced or increased by
     private final float MIN_DEC_VOL = 5.0f; // Minimal skill that can be reduced
+    private final float MAX_SKILL_VALUE = 20F; // Max skill value
     
     // VARIBLES
     //**************************************************************************
@@ -38,10 +39,10 @@ public class Skill {
     
     // METHODS (GET/SET)
     //**************************************************************************
-    protected String getSkillName(){
+    public String getSkillName(){
         return this.skillName;
     }
-    protected float getSkillVolume(){
+    public float getSkillVolume(){
         return this.skillVolume;
     }
     protected char[] getSkillType(){
@@ -51,7 +52,7 @@ public class Skill {
         return this.skillGroup.clone();
     }
     
-    protected void setSkillVolume(float skillVolume){
+     void setSkillVolume(float skillVolume){
         this.skillVolume = skillVolume;
     }
     protected void setSkillName(String skillName){

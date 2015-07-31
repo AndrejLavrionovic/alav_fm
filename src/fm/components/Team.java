@@ -16,7 +16,7 @@ public class Team{
     // CONSTANTS
     //**************************************************************************
     private final int MAX_RATING = 100;
-    private final Logger OUT = Logger.getLogger("Team");
+    private static final Logger OUT = Logger.getLogger("Team");
     
     // VARIABLES
     //**************************************************************************
@@ -36,14 +36,30 @@ public class Team{
         this.teamName = teamName;
     }
     public void setTeamRating(int teamRating){
-        this.teamRating = teamRating;
+        try{
+            if(teamRating >= 0 && teamRating < 101){
+                this.teamRating = teamRating;
+            }
+            else{
+                if(teamRating < 0){
+                    this.teamRating = 0;
+                }
+                else if(teamRating > 100){
+                    this.teamRating = 100;
+                }
+                throw new NumberRangeException("WARNING: Team rating cannot be "+
+                        "less then 0 and greater then 100");
+            }
+        } catch(NumberRangeException e){
+            OUT.warning(e.toString());
+        }
     }
     
     // OTHER METHODS
     //**************************************************************************
     public void modifyRating(int ratingPoints){
         try{
-            if(this.teamRating < MAX_RATING && this.teamRating > 0){
+            if(0 <= this.teamRating && this.teamRating <=100){
                 this.teamRating += ratingPoints;
                 if(this.teamRating > 100){
                     this.teamRating = 100;
@@ -51,35 +67,11 @@ public class Team{
                 }
                 else if(this.teamRating < 0){
                     this.teamRating = 0;
-                    throw new NumberRangeException("WARNING: Team rating reach ninimum.");
+                    throw new NumberRangeException("WARNING: Team rating reach minimum.");
                 }
             }
             else{
-                if(this.teamRating < 0){
-                    this.teamRating = 0;
-                    this.teamRating += ratingPoints;
-                    if(this.teamRating > 100){
-                        this.teamRating = 100;
-                        throw new NumberRangeException("WARNING: Team ratng rich maximum.");
-                    }
-                    else if(this.teamRating < 0){
-                        this.teamRating = 0;
-                        throw new NumberRangeException("WARNING: Team rating reach ninimum.");
-                    }
-                }
-                else if(this.teamRating > 100){
-                    this.teamRating = 100;
-                    this.teamRating += ratingPoints;
-                    if(this.teamRating > 100){
-                        this.teamRating = 100;
-                        throw new NumberRangeException("WARNING: Team ratng rich maximum.");
-                    }
-                    else if(this.teamRating < 0){
-                        this.teamRating = 0;
-                        throw new NumberRangeException("WARNING: Team rating reach ninimum.");
-                    }
-                }
-                throw new NumberRangeException("WARNING: Team rating cannot be less then 0"+
+                throw new NumberRangeException("WARNING: Team rating cannot be less then 0 "+
                         "or greater then 100.");
             }
         } catch(NumberRangeException e){
