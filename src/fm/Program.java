@@ -73,32 +73,69 @@ public class Program {
         
         // testing setSkillsValues() method in fm.units.Player.java
         //**********************************************************************
-        Person p = new Player("Andrej", "Lavrinovic");
-        p.setSkillsValues(1);
-        List<Skill> skl = p.getSkills();
+//        Person p = new Player("Andrej", "Lavrinovic");
+//        p.setSkillsValues(PLAYER);
+//        List<Skill> skl = p.getSkills();
+//        
+//        System.out.println("\n************Skilss Values**************");
+//        System.out.println("| No. | Skill name      | Skill Value |");
+//        System.out.println("=======================================");
+//        System.out.println("|     |                 |             |");
+//        
+//        for(int i = 0; i < skl.size(); i++){
+//            Skill s = skl.get(i);
+//            String name = s.getSkillName();
+//            Float skV = s.getSkillVolume();
+//            System.out.printf("| %3d | %-16s| %-12.1f|%n", (i + 1), name,  skV);
+//        }
+//        
+//        System.out.println("=====================================");
+//        
+//        // testing calculateSkillLevel() method in fm.units.Person.java
+//        //**********************************************************************
+//        p.calculateSkillLevel(GOALKEEPER);
+//        System.out.println("Skill value of " + p.getFirstName() + " " + 
+//                p.getLastName() + " is " + p.getSkillLevel());
         
-        System.out.println("\n************Skilss Values**************");
-        System.out.println("| No. | Skill name      | Skill Value |");
-        System.out.println("=======================================");
-        System.out.println("|     |                 |             |");
-        
-        for(int i = 0; i < skl.size(); i++){
-            Skill s = skl.get(i);
-            String name = s.getSkillName();
-            Float skV = s.getSkillVolume();
-            System.out.printf("| %3d | %-16s| %-12.1f|%n", (i + 1), name,  skV);
-        }
-        
-        System.out.println("=====================================");
-        
-        // testing calculateSkillLevel() method in fm.units.Person.java
+        // testing fm.units.Skill.modifySkill() method
         //**********************************************************************
-        //Person p = new Player("Andrej", "Lavrinovic");
-        PersonSkills ps = new PersonSkills();
-        p.setSkillsValues(PLAYER);
-        p.calculateSkillLevel(PLAYER, ps.getSkills());
-        System.out.println("Skill value of " + p.getFirstName() + " " + 
-                p.getLastName() + " is " + p.getSkillLevel());
+//        System.out.println("\n\tTesting fm.units.Skill.modifySkill() method"+
+//                " for Max and Min rules");
+//        System.out.println("\tSkill value must be between 3 and 20"+
+//                " and modification must be in -1 to 1 range");
+//        System.out.println("\tfirst skill value is 10");
+//        Skill s = new Skill("Jumping");
+//        s.setSkillVolume(10f);
+//        
+//        num = 0;
+//        float vol;
+//        
+//        while(num != -999){
+//            msg = "";
+//            vol = s.getSkillVolume();
+//            msg += "Skill value is " + String.format("%.1f", s.getSkillVolume());
+//            number = JOptionPane.showInputDialog("Enter number for changing skill");
+//            s.modifySkill(Float.parseFloat(number));
+//            msg += "\nSkill modified on " + number;
+//            msg += "\nNew skill value is " + String.format("%.1f", s.getSkillVolume());
+//            JOptionPane.showMessageDialog(null, msg, s.getSkillName(), JOptionPane.INFORMATION_MESSAGE);
+//            num = Integer.parseInt(JOptionPane.showInputDialog("Enter -999 to exit or 1 to set new Skill."));
+//            if(num != -999){
+//                switch(num){
+//                    case 1:
+//                        number = JOptionPane.showInputDialog("Enter number for set new skill between (3.0 and 20.0)");
+//                        s.setSkillVolume(Float.parseFloat(number));
+//                }
+//            }
+//        }
         
+        // testin GUIBase and environment properties retrieving
+        //**********************************************************************
+        Player pl = new Player("Andrey", "Lavrinovic");
+        pl.setSkillsValues(1);
+        List<Skill> sk = pl.getSkills();
+        for(int i = 0; i < sk.size(); i++){
+            System.out.println("First skill name is --> " + sk.get(i).getSkillName());
+        }
     } // main
 } // class

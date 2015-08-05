@@ -7,20 +7,69 @@ package fm.units;
  * Java v1.8_0_20
  * Date: 27/07/2015
  * Time: 18:05
- * Last changed: 28/07/2015
+ * Last changed: 05/07/2015
  */
 
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
-import org.testng.annotations.BeforeSuite;
 
 public class GUIBase {
 
     // Retrieve properties file
-    public static final ResourceBundle BUNDLE = ResourceBundle.getBundle("env");
+    public static final ResourceBundle BUNDLE = ResourceBundle.getBundle("fm.units.resources.env");
     
     // Declare Logger
     private static final Logger OUT = Logger.getLogger("GUIBase");
+    
+    public GUIBase(){
+    
+        // Assigning parameters from properties file
+        // Skills
+        handling = getParam(HANDLING);
+        sprint = getParam(SPRINT);
+        throwin = getParam(THROW);
+        shoot = getParam(SHOOT);
+        headers = getParam(HEADER);
+        oneOnOne = getParam(ONE_ON_ONE);
+        pass = getParam(PASS);
+        cross = getParam(CROSS);
+        firstTouch = getParam(FIRST_TOUCH);
+        ritm = getParam(PACE);
+        agility = getParam(AGILITY);
+        stamina = getParam(STAMINA);
+        power = getParam(POWER);
+        jump = getParam(JUMP);
+        balance = getParam(BALANCE);
+        strength = getParam(STRENGHT);
+        intel = getParam(INTEL);
+        vision = getParam(VISION);
+        composure = getParam(COMPASURE);
+        leader = getParam(LEADER);
+        communication = getParam(COMMUNICATION);
+        decision = getParam(DESISION);
+        goalKicker = getParam(GOAL_KICK);
+        pos = getParam(POSITIONING);
+        reflex = getParam(REFLEX);
+        distribution = getParam(DISTRIBUTION);
+        conf = getParam(CONF);
+        // roles
+        player = getParam(PLAYER);
+        man = getParam(MAN);
+        // player positions
+        fr = getParam(FR);
+        lm = getParam(LM);
+        rm = getParam(RM);
+        am = getParam(AM);
+        dm = getParam(DM);
+        cm = getParam(CM);
+        ld = getParam(LD);
+        rd = getParam(RD);
+        cd = getParam(CD);
+        lw = getParam(LW);
+        rw = getParam(RW);
+        gk = getParam(GK);
+        
+    }
     
     // Parameters from properties file
     // skills
@@ -114,57 +163,6 @@ public class GUIBase {
     public static String rw;
     public static String gk;
     
-    @BeforeSuite (alwaysRun = true)
-    public void setupBeforeSuite(){       
-    
-        // Assigning parameters from properties file
-        // Skills
-        handling = getParam(HANDLING);
-        sprint = getParam(SPRINT);
-        throwin = getParam(THROW);
-        shoot = getParam(SHOOT);
-        headers = getParam(HEADER);
-        oneOnOne = getParam(ONE_ON_ONE);
-        pass = getParam(PASS);
-        cross = getParam(CROSS);
-        firstTouch = getParam(FIRST_TOUCH);
-        ritm = getParam(PACE);
-        agility = getParam(AGILITY);
-        stamina = getParam(STAMINA);
-        power = getParam(POWER);
-        jump = getParam(JUMP);
-        balance = getParam(BALANCE);
-        strength = getParam(STRENGHT);
-        intel = getParam(INTEL);
-        vision = getParam(VISION);
-        composure = getParam(COMPASURE);
-        leader = getParam(LEADER);
-        communication = getParam(COMMUNICATION);
-        decision = getParam(DESISION);
-        goalKicker = getParam(GOAL_KICK);
-        pos = getParam(POSITIONING);
-        reflex = getParam(REFLEX);
-        distribution = getParam(DISTRIBUTION);
-        conf = getParam(CONF);
-        // roles
-        player = getParam(PLAYER);
-        man = getParam(MAN);
-        // player positions
-        fr = getParam(FR);
-        lm = getParam(LM);
-        rm = getParam(RM);
-        am = getParam(AM);
-        dm = getParam(DM);
-        cm = getParam(CM);
-        ld = getParam(LD);
-        rd = getParam(RD);
-        cd = getParam(CD);
-        lw = getParam(LW);
-        rw = getParam(RW);
-        gk = getParam(GK);
-        
-    }
-    
     // METHODS
     //**************************************************************************
     public static String getParam(String paramName){
@@ -173,7 +171,7 @@ public class GUIBase {
         if(value == null || value.length() < 1){
             throw new IllegalArgumentException("Required parameter "+ paramName + " was not set");
         }
-        OUT.info(paramName + " was successfuly returned from env.properties file.");
+        // OUT.info(paramName + " was successfuly returned from env.properties file.");
         return value;
     }
     

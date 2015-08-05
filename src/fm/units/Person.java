@@ -30,13 +30,12 @@ public class Person extends PersonSkills {
     private float skillLevel;
     private String role;
     
-    private List<Skill> skills;
-    
     // private PersonSkills ps = new PersonSkills();
     
     // CONSTRUCTOR
     //**************************************************************************
     public Person(String firsName, String lastName){
+        super();
         this.firstName = firsName;
         this.lastName = lastName;
     }
@@ -55,9 +54,6 @@ public class Person extends PersonSkills {
     public String getRole(){
         return this.role;
     }
-    public List<Skill> getSkills(){
-        return getSkills();
-    }
     
     public void setRole(String position){
         this.role = position;
@@ -71,7 +67,7 @@ public class Person extends PersonSkills {
     
     // OTHER METHODS
     //**************************************************************************
-    public void calculateSkillLevel(int role, List<Skill> skills)
+    public void calculateSkillLevel(int role)
     throws IllegalArgumentException {
         
         float total = 0f;
@@ -81,7 +77,8 @@ public class Person extends PersonSkills {
             throw new IllegalArgumentException("ERROR: Role is not valid");
         }
         else{
-            for(int i = 0; i < skills.size(); i++){
+            int i;
+            for(i = 0; i < skills.size(); i++){
                 Skill s = skills.get(i);
                 int group[] = s.getSkillGroup();
                 if(searchForSkill(role, group)){
@@ -95,35 +92,45 @@ public class Person extends PersonSkills {
     
     private boolean searchForSkill(int role, int[] group){
         boolean match = false;
-        if(group.length > 1){
-            for(int i = 0; i < group.length; i++){
-                if(group[i] == role){
-                    match = true;
-                    return match;
+        try{
+            if(role != PLAYER && role != GOALKEEPER && role != MANAGER && role != DOC){
+                throw new IllegalArgumentException("ERROR: Role is not valid");
+            }
+            else{
+                if(group.length > 1){
+                    for(int i = 0; i < group.length; i++){
+                        if(group[i] == role){
+                            match = true;
+                            return match;
+                        }
+                    }
+                }
+                else{
+                    if(group[0] == role){
+                        match = true;
+                        return match;
+                    }
                 }
             }
-        }
-        else{
-            if(group[0] == role){
-                match = true;
-                return match;
-            }
+        } catch(IllegalArgumentException e){
+            OUT.warning(e.toString());
         }
         return match;
     }
     
-    public void setSkillsValues(int position)throws IllegalArgumentException{
+    public void setSkillsValues(int role)throws IllegalArgumentException{
         
         // position must be just 1 or 2 in this stage
         // where 1 for Player
         // 2 for Goalkeeper
-        if(position == PLAYER || position == GOALKEEPER){
-
-            for(int i = 0; i < this.skills.size(); i++){
+        if(role == PLAYER || role == GOALKEEPER ||
+                role == MANAGER || role == DOC){
+            int i;
+            for(i = 0; i < this.skills.size(); i++){
                 Skill s = this.skills.get(i);
                 // searching for player's skills
                 int[] group = s.getSkillGroup();
-                if(searchForSkill(position, group)){
+                if(searchForSkill(role, group)){
                     s.setSkillVolume(5.6f);
                 }
                 else{

@@ -26,7 +26,7 @@ import static org.junit.Assert.*;
 public class PlayerTest {
     
     // Implements
-    Player p = new Player("Andrey", "Lavrinovic");
+    Player p;
     
     public PlayerTest() {
     }
@@ -44,20 +44,12 @@ public class PlayerTest {
     @Before
     public void setUp() {
         System.out.println("* PlayerTest: @Before method");
+        this.p = new Player("Andrey", "Lavrinovic");
     }
     
     @After
     public void tearDown() {
         System.out.println("* PlayerTest: @After method");
-    }
-    
-    /*
-    * Testing setSkillsValues() method for proper parameter
-    */
-    @Test(expected=IllegalArgumentException.class)
-    public void checkForValidParameter(){
-        System.out.println("* PlayerTest: Testing method 1 - checkForValidParameter()");
-        final int position = 0;
-        p.setSkillsValues(position);
+        this.p = null;
     }
 }

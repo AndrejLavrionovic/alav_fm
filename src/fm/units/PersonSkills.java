@@ -10,25 +10,26 @@ import java.util.List;
  * Java v1.8_0_20
  * Date: 20/07/2015
  * Time: 16:45
- * Last changed: 31/07/2015
+ * Last changed: 05/07/2015
  */
-public class PersonSkills{
+public class PersonSkills extends GUIBase{
     // VARIBLES
     //**************************************************************************
     private final int[] plyOnly = {1};
     private final int[] gkpOnly = {2};
-    private final int[] plAndGk = {1, 2};
+    private final int[] plGk = {1, 2};
+    // private final int[] manOnly = {3};
+    // private final int[] plMan = {2, 3};
+    // private final int[] plGkMan = {1, 2, 3};
     
     // COLLECTIONS
     //**************************************************************************
-    List<Skill> skills = new ArrayList<Skill>();
-    
-    // Populating
-    //skills.add("Handling");
+    protected final List<Skill> skills;
     
     // CONSTRUCTOR
     //**************************************************************************
     public PersonSkills(){
+    this.skills = new ArrayList<>();
         populatingSkills();
     }
     
@@ -41,33 +42,33 @@ public class PersonSkills{
     // OTHER METHODS
     //**************************************************************************
     private void populatingSkills(){
-        skills.add(new Skill("Handling", plAndGk));     // 0
-        skills.add(new Skill("Sprinting", plyOnly));       // 1
-        skills.add(new Skill("Throw-in", plAndGk));      // 2
-        skills.add(new Skill("Shoting", plyOnly));        // 3
-        skills.add(new Skill("Header", plyOnly));      // 4
-        skills.add(new Skill("One-on-One", plAndGk));     // 5
-        skills.add(new Skill("Passing", plyOnly));         // 6
-        skills.add(new Skill("Crossing", plyOnly));        // 7
-        skills.add(new Skill("First Touch", plyOnly));   // 8
-        skills.add(new Skill("Pacing", plyOnly));         // 9
-        skills.add(new Skill("Agility", plAndGk));      // 10
-        skills.add(new Skill("Decision Making", plyOnly));     // 11
-        skills.add(new Skill("Power", plyOnly));        // 12
-        skills.add(new Skill("Destribution", gkpOnly)); // 13
-        skills.add(new Skill("Confidence", plAndGk));         // 14
-        skills.add(new Skill("Balance", gkpOnly));      // 15
-        skills.add(new Skill("Strength", plyOnly));     // 16
-        skills.add(new Skill("Inteligence", plyOnly));        // 17
-        skills.add(new Skill("Jumping", plAndGk));         // 18
-        skills.add(new Skill("Composure", plyOnly));    // 19
-        skills.add(new Skill("Leadership", plAndGk));       // 20
-        skills.add(new Skill("Communication", plAndGk));// 21
-        skills.add(new Skill("Stamina", plyOnly));      // 22
-        skills.add(new Skill("vision", plyOnly));       // 23
-        skills.add(new Skill("Goalkicking", gkpOnly));   // 24
-        skills.add(new Skill("Positioning", gkpOnly));          // 25
-        skills.add(new Skill("Reflex", gkpOnly));       // 26
+        skills.add(new Skill(handling, plGk));     // 0
+        skills.add(new Skill(sprint, plyOnly));       // 1
+        skills.add(new Skill(throwin, plGk));      // 2
+        skills.add(new Skill(shoot, plyOnly));        // 3
+        skills.add(new Skill(headers, plyOnly));      // 4
+        skills.add(new Skill(oneOnOne, plGk));     // 5
+        skills.add(new Skill(pass, plyOnly));         // 6
+        skills.add(new Skill(cross, plyOnly));        // 7
+        skills.add(new Skill(firstTouch, plyOnly));   // 8
+        skills.add(new Skill(pass, plyOnly));         // 9
+        skills.add(new Skill(agility, plGk));      // 10
+        skills.add(new Skill(decision, plyOnly));     // 11
+        skills.add(new Skill(power, plyOnly));        // 12
+        skills.add(new Skill(distribution, gkpOnly)); // 13
+        skills.add(new Skill(conf, plGk));         // 14
+        skills.add(new Skill(balance, gkpOnly));      // 15
+        skills.add(new Skill(strength, plyOnly));     // 16
+        skills.add(new Skill(intel, plyOnly));        // 17
+        skills.add(new Skill(jump, plGk));         // 18
+        skills.add(new Skill(composure, plyOnly));    // 19
+        skills.add(new Skill(leader, plGk));       // 20
+        skills.add(new Skill(communication, plGk));// 21
+        skills.add(new Skill(stamina, plyOnly));      // 22
+        skills.add(new Skill(vision, plyOnly));       // 23
+        skills.add(new Skill(goalKicker, gkpOnly));   // 24
+        skills.add(new Skill(pos, gkpOnly));          // 25
+        skills.add(new Skill(reflex, gkpOnly));       // 26
         
     }
 }

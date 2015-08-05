@@ -16,7 +16,7 @@ public class Skill {
     // CONSTANTS
     //**************************************************************************
     private final float MAX_MOD_VOL = 1.0f; // Maximal skill value that can be reduced or increased by
-    private final float MIN_DEC_VOL = 5.0f; // Minimal skill that can be reduced
+    private final float MIN_DEC_VOL = 3.0f; // Minimal skill that can be reduced
     private final float MAX_SKILL_VALUE = 20F; // Max skill value
     
     // VARIBLES
@@ -52,7 +52,7 @@ public class Skill {
         return this.skillGroup.clone();
     }
     
-     void setSkillVolume(float skillVolume){
+    public void setSkillVolume(float skillVolume){
         this.skillVolume = skillVolume;
     }
     protected void setSkillName(String skillName){
@@ -67,19 +67,23 @@ public class Skill {
     
     // OTHER METHODS
     //**************************************************************************
-    protected void increaseSkillVolume(float skillVolume){
-        if(skillVolume <= MAX_MOD_VOL){
+    public void modifySkill(float skillVolume){
+        if(-1f <= skillVolume && skillVolume <= 1f){
             this.skillVolume += skillVolume;
         }
-        else {this.skillVolume += MAX_MOD_VOL;}
-    }
-    protected void decreaseSkillVolume(float skillVolume){
-        if(this.skillVolume > MIN_DEC_VOL){
-            if(skillVolume <= MAX_MOD_VOL){
-                this.skillVolume -= skillVolume;
+        else {
+            if(skillVolume < 0){
+                this.skillVolume -= MAX_MOD_VOL;
             }
-            else {this.skillVolume -= MAX_MOD_VOL;}
+            else if(skillVolume > 0){
+                this.skillVolume += MAX_MOD_VOL;
+            }
         }
-        
+        if(this.skillVolume < MIN_DEC_VOL){
+            this.skillVolume = MIN_DEC_VOL;
+        }
+        else if(this.skillVolume > MAX_SKILL_VALUE){
+            this.skillVolume = MAX_SKILL_VALUE;
+        }
     }
 }

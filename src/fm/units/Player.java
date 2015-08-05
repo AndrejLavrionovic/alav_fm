@@ -19,15 +19,10 @@ public class Player extends Person  {
     
     // CONSTANTS
     //**************************************************************************
-    private final int PLAYER = 1;
-    private final int GOALKEEPER = 2;
     private final static Logger OUT = Logger.getLogger("Player");
     
     // VARIABLES
     //**************************************************************************
-    // Extracting Skills
-    private final PersonSkills sk = new PersonSkills();
-    
     private String position;
     
     // CONSTRUCTOR
