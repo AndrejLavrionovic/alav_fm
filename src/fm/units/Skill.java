@@ -1,8 +1,5 @@
 package fm.units;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  *
  * @author Andrei
@@ -10,7 +7,7 @@ import java.util.List;
  * Java v1.8_0_20
  * Date: 23/07/2015
  * Time: 17:38
- * Last changed: 30/07/2015
+ * Last changed: 05/08/2015
  */
 public class Skill {
     // CONSTANTS
@@ -24,7 +21,6 @@ public class Skill {
     private String skillName;
     private float skillVolume = 0.0f;
     private char[] skillType;
-    private List<String> skillAcceptance = new ArrayList<String>();
     private int[] skillGroup;
     
     // CONSTRUCTORS

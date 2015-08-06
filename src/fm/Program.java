@@ -29,7 +29,7 @@ import fm.units.Skill;
  * Java v1.8_0_20
  * Date: 28/07/2015
  * Time: 16:21
- * Last changed: 30/07/2015
+ * Last changed: 05/08/2015
  */
 public class Program {
     

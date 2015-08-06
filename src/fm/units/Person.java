@@ -10,7 +10,6 @@ package fm.units;
  * Last changed: 31/07/2015
  */
 
-import java.util.List;
 import java.util.logging.Logger;
 
 public class Person extends PersonSkills {
