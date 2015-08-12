@@ -3,25 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fm.units;
+
+package fm.units.staff;
 
 /**
  *
  * @author Andrei
+ * Made by NetBeands v8.0.2
  * Java v1.8_0_20
- * Date: 17/07/2015
- * Time: 12:51
+ * Date: 23/07/2015
+ * Time: 15:36
  * Last changed: 28/07/2015
  */
-public class CoachingStaff extends Person{
+public class MedStaff {
     // VARIABLES
     //**************************************************************************
-    
-    // CONSTRUCTORS
-    //**************************************************************************
-    public CoachingStaff(String firstName, String lastName){
-        super(firstName, lastName);
-    }
     
     // METHODS (GET/SET)
     //**************************************************************************

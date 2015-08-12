@@ -1,8 +1,6 @@
-package fm.units;
+package fm.units.players;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import fm.units.Person;
 import java.util.logging.Logger;
 
 /**
@@ -19,7 +17,7 @@ public class Player extends Person  {
     
     // CONSTANTS
     //**************************************************************************
-    private final static Logger OUT = Logger.getLogger("Player");
+    private final static Logger LOGGER = Logger.getLogger("Player");
     
     // VARIABLES
     //**************************************************************************

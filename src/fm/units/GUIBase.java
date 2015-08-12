@@ -19,7 +19,7 @@ public class GUIBase {
     public static final ResourceBundle BUNDLE = ResourceBundle.getBundle("fm.units.resources.env");
     
     // Declare Logger
-    private static final Logger OUT = Logger.getLogger("GUIBase");
+    private static final Logger LOGGER = Logger.getLogger("GUIBase");
     
     public GUIBase(){
     

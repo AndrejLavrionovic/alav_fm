@@ -16,7 +16,7 @@ public class Team{
     // CONSTANTS
     //**************************************************************************
     private final int MAX_RATING = 100;
-    private static final Logger OUT = Logger.getLogger("Team");
+    private static final Logger LOGGER = Logger.getLogger("Team");
     
     // VARIABLES
     //**************************************************************************
@@ -51,7 +51,7 @@ public class Team{
                         "less then 0 and greater then 100");
             }
         } catch(NumberRangeException e){
-            OUT.warning(e.toString());
+            LOGGER.warning(e.toString());
         }
     }
     
@@ -75,7 +75,7 @@ public class Team{
                         "or greater then 100.");
             }
         } catch(NumberRangeException e){
-            OUT.warning(e.toString());
+            LOGGER.warning(e.toString());
         }
     }
 }

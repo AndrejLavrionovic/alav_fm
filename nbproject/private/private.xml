@@ -3,13 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Andrei/Projects/Java/ALAV/ALAV%20FM/src/fm/units/Player.java</file>
-            <file>file:/C:/Users/Andrei/Projects/Java/ALAV/ALAV%20FM/src/fm/units/Person.java</file>
-            <file>file:/C:/Users/Andrei/Projects/Java/ALAV/ALAV%20FM/src/fm/Program.java</file>
-            <file>file:/C:/Users/Andrei/Projects/Java/ALAV/ALAV%20FM/src/fm/units/Skill.java</file>
-            <file>file:/C:/Users/Andrei/Projects/Java/ALAV/ALAV%20FM/src/fm/units/GUIBase.java</file>
-            <file>file:/C:/Users/Andrei/Projects/Java/ALAV/ALAV%20FM/src/fm/units/PersonSkills.java</file>
-            <file>file:/C:/Users/Andrei/Projects/Java/ALAV/ALAV%20FM/src/fm/units/resources/env.properties</file>
+            <file>file:/C:/Users/Andrei/Projects/Java/ALAV/ALAV%20FM/src/fm/units/contract/regulators/PriceRegulator.java</file>
+            <file>file:/C:/Users/Andrei/Projects/Java/ALAV/ALAV%20FM/src/fm/units/contract/ContractBonuses.java</file>
+            <file>file:/C:/Users/Andrei/Projects/Java/ALAV/ALAV%20FM/src/fm/units/contract/regulators/BonusRegulator.java</file>
+            <file>file:/C:/Users/Andrei/Projects/Java/ALAV/ALAV%20FM/src/fm/units/contract/PlayerContract.java</file>
+            <file>file:/C:/Users/Andrei/Projects/Java/ALAV/ALAV%20FM/src/fm/units/contract/regulators/SalaryRegulator.java</file>
+            <file>file:/C:/Users/Andrei/Projects/Java/ALAV/ALAV%20FM/src/fm/units/contract/Contract.java</file>
+            <file>file:/C:/Users/Andrei/Projects/Java/ALAV/ALAV%20FM/src/fm/units/contract/demands/PlayerDemands.java</file>
         </group>
     </open-files>
 </project-private>

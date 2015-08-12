@@ -11,6 +11,7 @@
  */
 package fm.units;
 
+import fm.units.players.Player;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

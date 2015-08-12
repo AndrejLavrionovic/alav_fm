@@ -16,7 +16,7 @@ public class Person extends PersonSkills {
     // CONSTANTS
     //**************************************************************************
     protected static final int MAX_SKILL = 20;
-    private static final Logger OUT = Logger.getLogger("Person");
+    private static final Logger LOGGER = Logger.getLogger("Person");
     private final int PLAYER = 1;
     private final int GOALKEEPER = 2;
     private final int MANAGER = 3;
@@ -112,7 +112,7 @@ public class Person extends PersonSkills {
                 }
             }
         } catch(IllegalArgumentException e){
-            OUT.warning(e.toString());
+            LOGGER.warning(e.toString());
         }
         return match;
     }

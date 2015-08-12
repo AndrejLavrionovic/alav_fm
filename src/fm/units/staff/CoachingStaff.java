@@ -3,21 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package fm.units.staff;
 
-package fm.units;
+import fm.units.Person;
 
 /**
  *
  * @author Andrei
- * Made by NetBeands v8.0.2
  * Java v1.8_0_20
- * Date: 23/07/2015
- * Time: 15:36
+ * Date: 17/07/2015
+ * Time: 12:51
  * Last changed: 28/07/2015
  */
-public class MedStaff {
+public class CoachingStaff extends Person{
     // VARIABLES
     //**************************************************************************
+    
+    // CONSTRUCTORS
+    //**************************************************************************
+    public CoachingStaff(String firstName, String lastName){
+        super(firstName, lastName);
+    }
     
     // METHODS (GET/SET)
     //**************************************************************************

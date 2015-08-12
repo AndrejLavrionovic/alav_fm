@@ -16,7 +16,7 @@ import fm.components.Team;
 import fm.units.Person;
 import fm.units.PersonSkills;
 import javax.swing.JOptionPane;
-import fm.units.Player;
+import fm.units.players.Player;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
